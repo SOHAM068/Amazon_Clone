@@ -7,9 +7,9 @@ import Seperator from '../components/Seperator'
 
 import { Product_List } from '../data/constants'
 
-type productaProps = NativeStackScreenProps<RootStackParamList, "Home">
+type productsProps = NativeStackScreenProps<RootStackParamList, "Home">
 
-const Home = ({navigation} : productaProps) => {
+const Home = ({navigation} : productsProps) => {
   return (
     <View style={styles.container}>
       <FlatList

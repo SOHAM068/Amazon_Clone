@@ -1,4 +1,4 @@
-import { Image, ScrollView, StyleSheet, Text, View } from 'react-native'
+import { Image, ScrollView, StyleSheet, Text, View, Pressable} from 'react-native'
 import React from 'react'
 import { NativeStackScreenProps } from '@react-navigation/native-stack'
 import { RootStackParamList } from '../App'
@@ -39,7 +39,16 @@ const Details = ({ route }: DetailsProp) => {
               <Text style={styles.tagBadge}>{tag}</Text>
             </View>
           ))}
+          <View style={{marginTop:18, alignItems:'center'}}>
+            <Pressable 
+            style={styles.buyStyle}
+            onPress={() => {}}
+            >
+                <Text style={styles.buyText}>Buy Now</Text>
+            </Pressable>
+          </View>
         </View>
+        
       </View>
     </ScrollView>
   )
@@ -51,6 +60,21 @@ const styles = StyleSheet.create({
     paddingHorizontal: 18,
     backgroundColor: '#FFFFFF',
   },
+  buyText:{
+    fontSize: 15,
+    fontWeight: '400',
+    color: 'black',
+    marginHorizontal: 4,
+},
+  buyStyle: {
+    elevation: 1,
+    width: 200,
+    height: 40,
+    backgroundColor: '#FFA41C',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 18,
+},  
   image: {
     width: 300,
     height: 450,
