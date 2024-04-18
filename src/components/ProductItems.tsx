@@ -1,7 +1,6 @@
 import { Button, Image, Pressable, StyleSheet, Text, View } from 'react-native'
 import React, { PropsWithChildren } from 'react'
 
-
 type ProductProps = PropsWithChildren<{
     product: Products
 }>

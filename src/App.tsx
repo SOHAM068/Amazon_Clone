@@ -5,15 +5,19 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import Home from './Screens/Home'
 import Details from './Screens/Details'
 
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+
 export type RootStackParamList = {
   Home : undefined;
   Details : {product : Products};
 }
+const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator<RootStackParamList>()
-export default function App() {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName='Home'>
+
+export function StackNavigator() {
+  return(
+    <Stack.Navigator  initialRouteName='Home'>
         <Stack.Screen 
         name='Home' 
         component={Home}
@@ -25,6 +29,21 @@ export default function App() {
         options={{title: "Product Details"}}
         />
       </Stack.Navigator>
+  )
+}
+export function TabNavigator():JSX.Element {
+  return(
+    <Tab.Navigator>
+      <Tab.Screen name="Trending Products" component={StackNavigator} />
+      {/* <Tab.Screen name="Details" component={StackNavigator} /> */}
+    </Tab.Navigator>
+  )
+}
+export default function App() {
+  return (
+    <NavigationContainer>
+      <StackNavigator />
+      
     </NavigationContainer>
   )
 }

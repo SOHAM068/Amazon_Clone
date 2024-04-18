@@ -3,6 +3,7 @@ import React from 'react'
 import { NativeStackScreenProps } from '@react-navigation/native-stack'
 import { RootStackParamList } from '../App'
 
+
 type DetailsProp = NativeStackScreenProps<RootStackParamList, "Details">
 const Details = ({ route }: DetailsProp) => {
   const { product } = route.params
@@ -46,6 +47,7 @@ const Details = ({ route }: DetailsProp) => {
             >
                 <Text style={styles.buyText}>Buy Now</Text>
             </Pressable>
+            <Text>🔒 Secure transaction</Text>
           </View>
         </View>
         
